@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${CUSTOMERS_DB}
+    username: ${CUSTOMERS_USER}
+    password: ${CUSTOMERS_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
