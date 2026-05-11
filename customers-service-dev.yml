@@ -21,3 +21,9 @@ eureka:
       defaultZone: ${EUREKA_ZONE_URL}
   instance:
     instance-id: ${spring.application.name}:${random.value}
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
