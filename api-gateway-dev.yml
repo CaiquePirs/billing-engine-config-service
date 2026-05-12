@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_ZONE_URL}
+    register-with-eureka: true
+    fetch-registry: true
