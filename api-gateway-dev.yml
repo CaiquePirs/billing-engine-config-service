@@ -1,3 +1,10 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
+
 server:
   port: 8080
   cloud:
