@@ -5,14 +5,16 @@ spring:
         jwt:
           jwk-set-uri: http://localhost:8081/oauth2/jwks
 
-server:
-  port: 8080
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+
+server:
+  port: 8080
+
 eureka:
   client:
     service-url:
