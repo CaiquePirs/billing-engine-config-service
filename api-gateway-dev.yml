@@ -1,9 +1,9 @@
+server:
+  port: 8080
+
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8081/oauth2/jwks
+  application:
+    name: api-gateway
 
   cloud:
     gateway:
@@ -12,8 +12,11 @@ spring:
           enabled: true
           lower-case-service-id: true
 
-server:
-  port: 8080
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
 
 eureka:
   client:
