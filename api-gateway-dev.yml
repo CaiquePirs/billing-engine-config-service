@@ -3,7 +3,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          secret-key: ${SECRET_KEY}
+          jwk-set-uri: http://localhost:8081/oauth2/jwks
 
 server:
   port: 8080
