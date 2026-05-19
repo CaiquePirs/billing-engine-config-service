@@ -34,3 +34,7 @@ eureka:
       discovery:
         enabled: true
         service-id: config-server
+
+stripe:
+  api-key: ${STRIPE_SECRET_KEY}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET}
