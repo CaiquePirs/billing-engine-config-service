@@ -1,0 +1,40 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5435/${PAYMENT_DB}
+    username: ${PAYMENT_USER}
+    password: ${PAYMENT_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_ZONE_URL}
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
+stripe:
+  api-key: ${STRIPE_SECRET_KEY}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET}
