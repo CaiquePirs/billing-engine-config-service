@@ -38,3 +38,10 @@ eureka:
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
   webhook-secret: ${STRIPE_WEBHOOK_SECRET}
+
+aws:
+  region: us-east-1
+
+sns:
+  topic:
+    subscription-created: arn:aws:sns:us-east-1:000000000000:subscription-created-topic
