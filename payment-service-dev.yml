@@ -8,6 +8,21 @@ spring:
     password: ${PAYMENT_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+      credentials:
+        access-key: test
+        secret-key: test
+      sqs:
+        endpoint: http://localhost:4566
+
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
   security:
     oauth2:
       resourceserver:
@@ -28,12 +43,6 @@ eureka:
       defaultZone: ${EUREKA_ZONE_URL}
   instance:
     instance-id: ${spring.application.name}:${random.value}
-
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
 
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
