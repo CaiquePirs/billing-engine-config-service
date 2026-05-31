@@ -55,7 +55,9 @@ resilience4j:
         max-attempts: 4
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2
-        wait-duration: 1s
+        wait-duration: 1
+        record-exceptions:
+          - com.stripe.exception.StripeException
 
   circuitbreaker:
     instances:
@@ -67,3 +69,5 @@ resilience4j:
         wait-duration-in-open-state: 30s
         permitted-number-of-calls-in-half-open-state: 3
         automatic-transition-from-open-to-half-open-enabled: true
+        retry-exceptions:
+          - com.billing.payment.exception.StripeIntegrationException
