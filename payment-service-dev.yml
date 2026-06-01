@@ -17,8 +17,7 @@ spring:
         secret-key: test
       sqs:
         endpoint: http://localhost:4566
-        dlq-url: ${PAYMENT_PROCESSING_DLQ}
-
+        
     config:
       discovery:
         enabled: true
