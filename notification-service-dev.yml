@@ -1,0 +1,30 @@
+server:
+  port: 0
+
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+      credentials:
+        access-key: test
+        secret-key: test
+      sqs:
+        endpoint: http://localhost:4566
+
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_ZONE_URL}
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
