@@ -13,11 +13,11 @@ spring:
       region:
         static: us-east-1
       credentials:
-        access-key: test
-        secret-key: test
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
       sqs:
-        endpoint: http://localhost:4566
-        
+        endpoint: ${AWS_URI}
+
     config:
       discovery:
         enabled: true

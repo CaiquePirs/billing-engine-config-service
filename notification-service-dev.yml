@@ -6,10 +6,8 @@ server:
       region:
         static: us-east-1
       credentials:
-        access-key: test
-        secret-key: test
-      sqs:
-        endpoint: http://localhost:4566
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
 
     config:
       discovery:
