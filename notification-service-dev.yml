@@ -1,12 +1,6 @@
 server:
   port: 0
 
-  mail:
-    host: ${AWS_SES_SMTP_HOST}
-    port: ${AWS_SES_SMTP_PORT}
-    username: ${AWS_SES_SMTP_USERNAME}
-    password: ${AWS_SES_SMTP_PASSWORD}
-
   cloud:
     aws:
       region:
