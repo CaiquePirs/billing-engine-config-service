@@ -41,7 +41,10 @@ stripe:
 
 aws:
   region: us-east-1
-
-sns:
-  topic:
-    subscription-created: arn:aws:sns:us-east-1:000000000000:subscription-created-topic
+  sqs:
+    endpoint: http://localhost:4566
+    topic:
+      subscription-created: arn:aws:sns:us-east-1:000000000000:subscription-created-topic
+    queue:
+      active-subscription: active-subscription-queue
+      desactive-subscription: desactive-subscription-queue
