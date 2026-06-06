@@ -6,8 +6,8 @@ server:
       region:
         static: us-east-1
       credentials:
-        access-key: ${AWS_ACCESS_KEY_PRODUCTION}
-        secret-key: ${AWS_SECRET_KEY_PRODUCTION}
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
 
     config:
       discovery:
