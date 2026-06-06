@@ -14,12 +14,6 @@ server:
         enabled: true
         service-id: config-server
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          secret-key: ${SECRET_KEY}
-
 eureka:
   client:
     service-url:
