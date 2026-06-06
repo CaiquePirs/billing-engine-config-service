@@ -1,13 +1,28 @@
 server:
   port: 0
 
+aws:
+  localstack:
+    region: ${AWS_REGION}
+    endpoint: ${AWS_URI}
+    access-key: ${AWS_ACCESS_KE}
+    secret-key: ${AWS_SECRET_KEY}
+
+  production:
+    region: ${AWS_REGION_PRODUCTION}
+    access-key: ${AWS_ACCESS_KEY_PRODUCTION}
+    secret-key: ${AWS_SECRET_KEY_PRODUCTION}
+
+spring:
   cloud:
     aws:
       region:
-        static: us-east-1
+        static: ${AWS_REGION}
       credentials:
         access-key: ${AWS_ACCESS_KEY}
         secret-key: ${AWS_SECRET_KEY}
+      sqs:
+        endpoint: ${AWS_URI}
 
     config:
       discovery:
