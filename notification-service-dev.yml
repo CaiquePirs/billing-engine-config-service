@@ -5,7 +5,7 @@ aws:
   localstack:
     region: ${AWS_REGION}
     endpoint: ${AWS_URI}
-    access-key: ${AWS_ACCESS_KE}
+    access-key: ${AWS_ACCESS_KEY}
     secret-key: ${AWS_SECRET_KEY}
 
   production:
