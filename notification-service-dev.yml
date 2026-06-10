@@ -24,6 +24,11 @@ spring:
       sqs:
         endpoint: ${AWS_URI}
 
+    data:
+      redis:
+        host: localhost
+        port: 6379
+
     config:
       discovery:
         enabled: true
