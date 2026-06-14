@@ -62,7 +62,7 @@ resilience4j:
           - com.stripe.exception.InvalidRequestException
           - com.stripe.exception.AuthenticationException
           - com.stripe.exception.PermissionException
-          - com.billing.payment.exception.PaymentDeclinedException
+          - com.billing.payment.controller.advice.exceptions.PaymentDeclinedException
 
   circuitbreaker:
     instances:
