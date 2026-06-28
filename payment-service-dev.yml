@@ -9,15 +9,6 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   cloud:
-    aws:
-      region:
-        static: us-east-1
-      credentials:
-        access-key: ${AWS_ACCESS_KEY}
-        secret-key: ${AWS_SECRET_KEY}
-      sqs:
-        endpoint: ${AWS_URI}
-
     config:
       discovery:
         enabled: true
