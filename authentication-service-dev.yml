@@ -27,3 +27,12 @@ eureka:
       discovery:
         enabled: true
         service-id: config-server
+
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
+auth:
+  service:
+    client-id: ${AUTHENTICATION_SERVICE_CLIENT_ID}
+    client-secret: ${AUTHENTICATION_SERVICE_SECRET}

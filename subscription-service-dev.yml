@@ -22,6 +22,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
 eureka:
   client:
     service-url:
@@ -29,21 +35,30 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
 
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
+aws:
+  localstack:
+    region: ${AWS_REGION}
+    endpoint: ${AWS_URI}
+    access-key: ${AWS_ACCESS_KEY}
+    secret-key: ${AWS_SECRET_KEY}
+  sqs:
+    queue:
+      active-subscription: ${ACTIVE_SUBSCRIPTION_QUEUE}
+      deactivate-subscription: ${DEACTIVATE_SUBSCRIPTION_QUEUE}
+
+sns:
+  topic:
+    subscription-created: arn:aws:sns:us-east-1:000000000000:subscription-created-topic
 
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
   webhook-secret: ${STRIPE_WEBHOOK_SECRET}
 
-aws:
-  region: us-east-1
-  sqs:
-    endpoint: http://localhost:4566
-
-sns:
-  topic:
-    subscription-created: arn:aws:sns:us-east-1:000000000000:subscription-created-topic
+subscription:
+  service:
+    client-id: ${SUBSCRIPTION_SERVICE_CLIENT_ID}
+    client-secret: ${SUBSCRIPTION_SERVICE_SECRET}

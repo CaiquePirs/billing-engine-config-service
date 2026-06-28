@@ -13,6 +13,19 @@ aws:
     access-key: ${AWS_ACCESS_KEY_PRODUCTION}
     secret-key: ${AWS_SECRET_KEY_PRODUCTION}
 
+  s3:
+    bucket: ${AWS_S3_BUCKET}
+
+  sqs:
+    queue:
+      notify-subscription: ${NOTIFY_SUBSCRIPTION_QUEUE}
+      notify-payment-approved: ${NOTIFY_PAYMENT_APPROVED}
+      notify-payment-failed: ${NOTIFY_PAYMENT_FAILED}
+      invoice-created: ${INVOICE_CREATED_QUEUE}
+
+notification:
+  sender-email: ${INTERNAL_SERVICE_EMAIL}
+
 spring:
   cloud:
     aws:

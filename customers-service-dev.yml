@@ -14,6 +14,10 @@ spring:
         jwt:
           secret-key: ${SECRET_KEY}
 
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
   jpa:
     hibernate:
       ddl-auto: validate

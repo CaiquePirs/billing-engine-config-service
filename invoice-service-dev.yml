@@ -46,3 +46,9 @@ eureka:
       discovery:
         enabled: true
         service-id: config-server
+
+aws:
+  sqs:
+    queue:
+      generate-invoice: ${GENERATE_NEW_INVOICE_QUEUE}
+      invoice-created: ${INVOICE_CREATED_QUEUE}

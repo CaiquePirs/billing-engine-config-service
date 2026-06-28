@@ -44,6 +44,25 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
 
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
+aws:
+  localstack:
+    region: ${AWS_REGION}
+    endpoint: ${AWS_URI}
+    access-key: ${AWS_ACCESS_KEY}
+    secret-key: ${AWS_SECRET_KEY}
+  sqs:
+    queue:
+      process-payment: ${PROCESS_PAYMENT_QUEUE}
+      payment-processing-dlq: ${PAYMENT_PROCESSING_DLQ}
+  sns:
+    topic:
+      payment-approved: ${PAYMENT_APPROVED_TOPIC}
+      payment-failed: ${PAYMENT_FAILED_TOPIC}
+
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
   webhook-secret: ${STRIPE_WEBHOOK_SECRET}
