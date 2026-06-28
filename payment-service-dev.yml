@@ -65,7 +65,7 @@ aws:
 
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
-  webhook-secret: ${STRIPE_WEBHOOK_SECRET}
+  webhook-secret: ${STRIPE_WEBHOOK_SIGN}
 
 resilience4j:
   retry:
