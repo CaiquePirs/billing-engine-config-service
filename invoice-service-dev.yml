@@ -1,18 +1,6 @@
 server:
   port: 0
 
-aws:
-  localstack:
-    region: ${AWS_REGION}
-    endpoint: ${AWS_URI}
-    access-key: ${AWS_ACCESS_KEY}
-    secret-key: ${AWS_SECRET_KEY}
-
-  production:
-    region: ${AWS_REGION_PRODUCTION}
-    access-key: ${AWS_ACCESS_KEY_PRODUCTION}
-    secret-key: ${AWS_SECRET_KEY_PRODUCTION}
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5436/${INVOICE_DB}
@@ -52,3 +40,14 @@ aws:
     queue:
       generate-invoice: ${GENERATE_NEW_INVOICE_QUEUE}
       invoice-created: ${INVOICE_CREATED_QUEUE}
+
+  localstack:
+    region: ${AWS_REGION}
+    endpoint: ${AWS_URI}
+    access-key: ${AWS_ACCESS_KEY}
+    secret-key: ${AWS_SECRET_KEY}
+
+  production:
+    region: ${AWS_REGION_PRODUCTION}
+    access-key: ${AWS_ACCESS_KEY_PRODUCTION}
+    secret-key: ${AWS_SECRET_KEY_PRODUCTION}
