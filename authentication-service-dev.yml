@@ -36,3 +36,18 @@ auth:
   service:
     client-id: ${AUTHENTICATION_SERVICE_CLIENT_ID}
     client-secret: ${AUTHENTICATION_SERVICE_SECRET}
+
+management:
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:9090/api/v1/otlp/v1/metrics
+        step: 10s
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: dev
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
