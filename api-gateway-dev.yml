@@ -28,3 +28,14 @@ eureka:
       defaultZone: ${EUREKA_ZONE_URL}
     register-with-eureka: true
     fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics"
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:9090/api/v1/otlp/v1/metrics
+        step: 10s
