@@ -14,6 +14,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
 
 eureka:
   client:
@@ -21,12 +26,6 @@ eureka:
       defaultZone: ${EUREKA_ZONE_URL}
   instance:
     instance-id: ${spring.application.name}:${random.value}
-
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
 
 security:
   jwt:
@@ -45,5 +44,5 @@ management:
   otlp:
     metrics:
       export:
-        url: http://localhost:9090/api/v1/otlp/v1/metrics
+        url: http://localhost:4318/v1/metrics
         step: 10s
