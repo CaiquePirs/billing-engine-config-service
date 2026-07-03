@@ -42,3 +42,14 @@ eureka:
 stripe:
   api-key: ${STRIPE_SECRET_KEY}
   webhook-secret: ${STRIPE_WEBHOOK_SECRET}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  otlp:
+    metrics:
+      export:
+        url: ${OTLP_METRICS_EXPORT_URL}
+        step: 10s

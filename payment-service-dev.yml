@@ -95,3 +95,14 @@ resilience4j:
         automatic-transition-from-open-to-half-open-enabled: true
         retry-exceptions:
           - com.billing.payment.exception.StripeIntegrationException
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  otlp:
+    metrics:
+      export:
+        url: ${OTLP_METRICS_EXPORT_URL}
+        step: 10s

@@ -51,3 +51,14 @@ aws:
     region: ${AWS_REGION_PRODUCTION}
     access-key: ${AWS_ACCESS_KEY_PRODUCTION}
     secret-key: ${AWS_SECRET_KEY_PRODUCTION}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  otlp:
+    metrics:
+      export:
+        url: ${OTLP_METRICS_EXPORT_URL}
+        step: 10s

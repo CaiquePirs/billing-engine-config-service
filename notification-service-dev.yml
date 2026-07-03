@@ -48,3 +48,14 @@ eureka:
       defaultZone: ${EUREKA_ZONE_URL}
   instance:
     instance-id: ${spring.application.name}:${random.value}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  otlp:
+    metrics:
+      export:
+        url: ${OTLP_METRICS_EXPORT_URL}
+        step: 10s
