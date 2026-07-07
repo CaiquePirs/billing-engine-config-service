@@ -53,3 +53,7 @@ management:
       export:
         url: ${OTLP_METRICS_EXPORT_URL}
         step: 10s
+    logging:
+      export:
+        url: ${OTLP_LOGGING_EXPORT_URL}
+        step: 10s
