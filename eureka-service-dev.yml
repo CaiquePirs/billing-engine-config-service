@@ -11,6 +11,9 @@ management:
     web:
       exposure:
         include: health, info, metrics
+  tracing:
+    sampling:
+      probability: 1.0
   otlp:
     metrics:
       export:
@@ -18,3 +21,5 @@ management:
         step: 10s
     logging:
       endpoint: ${OTLP_LOGGING_EXPORT_URL}
+    tracing:
+      endpoint: ${OTLP_TRACING_EXPORT_URL}
