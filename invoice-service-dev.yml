@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5436/${INVOICE_DB}
+    url: ${INVOICE_SERVICE_URL_DATABASE}
     username: ${INVOICE_USER}
     password: ${INVOICE_PASSWORD}
     driver-class-name: org.postgresql.Driver

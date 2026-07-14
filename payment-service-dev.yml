@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5435/${PAYMENT_DB}
+    url: ${PAYMENT_SERVICE_URL_DATABASE}
     username: ${PAYMENT_USER}
     password: ${PAYMENT_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -11,7 +11,7 @@ spring:
   cloud:
     aws:
       region:
-        static: us-east-1
+        static: ${AWS_REGION}
       credentials:
         access-key: ${AWS_ACCESS_KEY}
         secret-key: ${AWS_SECRET_KEY}
