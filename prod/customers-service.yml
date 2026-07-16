@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: ${CUSTOMERS_SERVICE_URL_DATABASE}
-    username: ${CUSTOMERS_USER}
-    password: ${CUSTOMERS_PASSWORD}
+    username: ${BILLING_ENGINE_DB_USER}
+    password: ${BILLING_ENGINE_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:

@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: ${PAYMENT_SERVICE_URL_DATABASE}
-    username: ${PAYMENT_USER}
-    password: ${PAYMENT_PASSWORD}
+    username: ${BILLING_ENGINE_DB_USER}
+    password: ${BILLING_ENGINE_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:

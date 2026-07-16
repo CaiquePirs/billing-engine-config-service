@@ -62,7 +62,7 @@ Each service file exists in both `dev/` and `prod/`.
 
 The configuration files rely on environment variables for sensitive and environment-specific data, including:
 
-- **Databases** — `*_DB`, `*_USER`, `*_PASSWORD`
+- **Databases** — `*_URL_DATABASE`, `BILLING_ENGINE_DB_USER`, `BILLING_ENGINE_DB_PASSWORD` (shared user and password across all services)
 - **Security** — `SECRET_KEY`
 - **Service credentials** — `AUTHENTICATION_SERVICE_CLIENT_ID`, `AUTHENTICATION_SERVICE_SECRET`, `SUBSCRIPTION_SERVICE_CLIENT_ID`, `SUBSCRIPTION_SERVICE_SECRET`
 - **AWS** — `AWS_REGION`, `AWS_URI`, `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `AWS_S3_BUCKET` (and `*_PRODUCTION` variants)
