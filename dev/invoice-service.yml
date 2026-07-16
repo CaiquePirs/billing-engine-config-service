@@ -37,7 +37,6 @@ eureka:
 
 aws:
   region: ${AWS_REGION}
-  endpoint: ${AWS_URI}
   access-key: ${AWS_ACCESS_KEY}
   secret-key: ${AWS_SECRET_KEY}
 
@@ -48,10 +47,6 @@ aws:
 
   s3:
     bucket: ${AWS_S3_BUCKET}
-    endpoint-override: ${AWS_URI}
-    region: ${AWS_REGION}
-    access-key: ${AWS_ACCESS_KEY}
-    secret-key: ${AWS_SECRET_KEY}
 
 management:
   endpoints:

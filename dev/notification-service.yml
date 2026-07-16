@@ -3,7 +3,6 @@ server:
 
 aws:
   region: ${AWS_REGION}
-  endpoint: ${AWS_URI}
   access-key: ${AWS_ACCESS_KEY}
   secret-key: ${AWS_SECRET_KEY}
 
@@ -28,8 +27,6 @@ spring:
       credentials:
         access-key: ${AWS_ACCESS_KEY}
         secret-key: ${AWS_SECRET_KEY}
-      sqs:
-        endpoint: ${AWS_URI}
 
     config:
       discovery:
