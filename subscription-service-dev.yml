@@ -8,12 +8,6 @@ spring:
     password: ${SUBSCRIPTION_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          secret-key: ${SECRET_KEY}
-
   jpa:
     hibernate:
       ddl-auto: validate
@@ -21,6 +15,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
 
   cloud:
     config:
@@ -40,11 +40,11 @@ security:
     secret-key: ${SECRET_KEY}
 
 aws:
-  localstack:
-    region: ${AWS_REGION}
-    endpoint: ${AWS_URI}
-    access-key: ${AWS_ACCESS_KEY}
-    secret-key: ${AWS_SECRET_KEY}
+  region: ${AWS_REGION}
+  endpoint: ${AWS_URI}
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+
   sqs:
     queue:
       active-subscription: ${ACTIVE_SUBSCRIPTION_QUEUE}

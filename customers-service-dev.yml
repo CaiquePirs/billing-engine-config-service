@@ -8,16 +8,6 @@ spring:
     password: ${CUSTOMERS_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          secret-key: ${SECRET_KEY}
-
-security:
-  jwt:
-    secret-key: ${SECRET_KEY}
-
   jpa:
     hibernate:
       ddl-auto: validate
@@ -26,18 +16,28 @@ security:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-eureka:
-  client:
-    service-url:
-      defaultZone: ${EUREKA_ZONE_URL}
-  instance:
-    instance-id: ${spring.application.name}:${random.value}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: ${SECRET_KEY}
 
   cloud:
     config:
       discovery:
         enabled: true
         service-id: config-server
+
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_ZONE_URL}
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
 
 stripe:
   api-key: ${STRIPE_SECRET_KEY}

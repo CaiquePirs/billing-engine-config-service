@@ -3,15 +3,15 @@ server:
 
 spring:
   datasource:
-    url: ${INVOICE_SERVICE_URL_DATABASE}
-    username: ${INVOICE_USER}
-    password: ${INVOICE_PASSWORD}
+    url: ${SUBSCRIPTION_SERVICE_URL_DATABASE}
+    username: ${SUBSCRIPTION_USER}
+    password: ${SUBSCRIPTION_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -35,23 +35,32 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
 
+security:
+  jwt:
+    secret-key: ${SECRET_KEY}
+
 aws:
   region: ${AWS_REGION}
-  endpoint: ${AWS_URI}
   access-key: ${AWS_ACCESS_KEY}
   secret-key: ${AWS_SECRET_KEY}
 
   sqs:
     queue:
-      generate-invoice: ${GENERATE_NEW_INVOICE_QUEUE}
-      invoice-created: ${INVOICE_CREATED_QUEUE}
+      active-subscription: ${ACTIVE_SUBSCRIPTION_QUEUE}
+      deactivate-subscription: ${DEACTIVATE_SUBSCRIPTION_QUEUE}
 
-  s3:
-    bucket: ${AWS_S3_BUCKET}
-    endpoint-override: ${AWS_URI}
-    region: ${AWS_REGION}
-    access-key: ${AWS_ACCESS_KEY}
-    secret-key: ${AWS_SECRET_KEY}
+sns:
+  topic:
+    subscription-created: ${SUBSCRIPTION_CREATED_TOPIC}
+
+stripe:
+  api-key: ${STRIPE_SECRET_KEY}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET}
+
+subscription:
+  service:
+    client-id: ${SUBSCRIPTION_SERVICE_CLIENT_ID}
+    client-secret: ${SUBSCRIPTION_SERVICE_SECRET}
 
 management:
   endpoints:

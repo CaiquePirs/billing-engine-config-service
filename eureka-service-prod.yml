@@ -1,0 +1,25 @@
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+server:
+  port: 8761
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    metrics:
+      export:
+        url: ${OTLP_METRICS_EXPORT_URL}
+        step: 10s
+    logging:
+      endpoint: ${OTLP_LOGGING_EXPORT_URL}
+    tracing:
+      endpoint: ${OTLP_TRACING_EXPORT_URL}
