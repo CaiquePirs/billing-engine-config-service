@@ -75,7 +75,7 @@ resilience4j:
         max-attempts: 4
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2
-        wait-duration: 1
+        wait-duration: 1s
 
   circuitbreaker:
     instances:
