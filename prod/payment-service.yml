@@ -68,21 +68,21 @@ resilience4j:
   retry:
     instances:
       stripe:
+        retry-exceptions:
+          - com.stripe.exception.ApiConnectionException
+          - com.stripe.exception.ApiException
+          - com.stripe.exception.RateLimitException
         max-attempts: 4
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2
         wait-duration: 1
-        ignore-exceptions:
-          - com.stripe.exception.StripeException
-          - com.stripe.exception.CardException
-          - com.stripe.exception.InvalidRequestException
-          - com.stripe.exception.AuthenticationException
-          - com.stripe.exception.PermissionException
-          - com.billing.payment.controller.advice.exceptions.PaymentDeclinedException
 
   circuitbreaker:
     instances:
       stripe:
+        record-exceptions:
+          - com.stripe.exception.ApiConnectionException
+          - com.stripe.exception.ApiException
         sliding-window-type: COUNT_BASED
         sliding-window-size: 10
         minimum-number-of-calls: 5
@@ -90,8 +90,6 @@ resilience4j:
         wait-duration-in-open-state: 30s
         permitted-number-of-calls-in-half-open-state: 3
         automatic-transition-from-open-to-half-open-enabled: true
-        retry-exceptions:
-          - com.billing.payment.exception.StripeIntegrationException
 
 management:
   endpoints:
