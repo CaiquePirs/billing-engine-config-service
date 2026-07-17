@@ -22,12 +22,6 @@ spring:
         jwt:
           secret-key: ${SECRET_KEY}
 
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
-
 security:
   jwt:
     secret-key: ${SECRET_KEY}
